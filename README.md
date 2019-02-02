@@ -1,1 +1,1 @@
-# programming-for-data-analytics-lab-tutorials
+# Programming-for-data-analytics-lab-tutorials
