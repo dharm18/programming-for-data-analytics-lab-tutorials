@@ -1,0 +1,22 @@
+ CREATE TABLE IF NOT EXISTS tableHive (numRow int,name String,city
+ String,county String,country String) ROW FORMAT DELIMITED FIELDS
+ TERMINATED BY '\054';
+
+
+movies = LOAD '/home/hduser/Desktop/movies_data.csv' USING PigStorage(',') as (id,name,year,rating,duration);
+
+movies_greater_than_four = FILTER movies BY (float)rating>4.0;
+DUMP movies_greater_than_four;
+
+store movies_greater_than_four into '/home/hduser/Desktop/movies_greater_than_four';
+
+movies = LOAD '/home/hduser/Desktop/movies_data.csv' USING PigStorage(',') as (id:int,name:chararray,year:int,rating:double,duration:int);
+
+
+hive------------------------------------------
+ CREATE TABLE IF NOT EXISTS test ROW FORMAT DELIMITED FIELDS
+ TERMINATED BY '\054';
+
+  LOAD DATA LOCAL INPATH 'CA2DATA.txt' INTO
+TABLE test;
+
