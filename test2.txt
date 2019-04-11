@@ -1,0 +1,54 @@
+ CREATE TABLE IF NOT EXISTS tableHive (numRow int,name String,city
+ String,county String,country String) ROW FORMAT DELIMITED FIELDS
+ TERMINATED BY '\054';
+
+ LOAD DATA LOCAL INPATH '/home/hduser/Desktop/pig_tutorial_sample.txt' INTO
+TABLE tableHive;
+
+
+sqoop import --connect jdbc:mysql://127.0.0.1/Test --username root --password root --table tableLab5 --hive-import --create-hive-table --hive-table tablelab5
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:mysql://localhost/metastore?createDatabaseIfNotExist=true</value>
+</property>
+
+
+<property>
+  <name>javax.jdo.option.ConnectionDriverName</name>
+  <value>com.mysql.jdbc.Driver</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionUserName</name>
+  <value>root</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionPassword</name>
+  <value></value>
+</property>
+
+<property>
+  <name>datanucleus.autoCreateSchema</name>
+  <value>true</value>
+</property>
+
+<property>
+  <name>datanucleus.fixedDatastore</name>
+  <value>true</value>
+</property>
+
+<property>
+ <name>datanucleus.autoCreateTables</name>
+ <value>True</value>
+ </property>
+
+</configuration>
+
+
+ sudo ln -s /media/sf_PFDA-VM-Share /home/hduser/Desktop/PFDA-VM-Share
